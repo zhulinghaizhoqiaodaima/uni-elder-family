@@ -43,6 +43,16 @@
 				</view>
 				<uni-icons type="right" size="16" color="#c0c4cc"></uni-icons>
 			</view>
+			
+		<!-- 	<view class="menu-item" hover-class="item-hover" @click="goToServiceOrders">
+				<view class="left">
+					<view class="icon-box blue-bg">
+						<uni-icons type="list" size="22" color="#409eff"></uni-icons>
+					</view>
+					<text class="label">我的活动</text>
+				</view>
+				<uni-icons type="right" size="16" color="#c0c4cc"></uni-icons>
+			</view> -->
 
 			<!-- 家属绑定 -->
 			<view class="menu-item" hover-class="item-hover" @click="goToFamilyBinding">
@@ -78,7 +88,9 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { onShow } from '@dcloudio/uni-app'  // onShow 必须从这里引入
+import { useUserStore } from '@/store/user.js'
 
+const userStore = useUserStore()
 const user = ref({})
 const isLogin = ref(false)
 
@@ -89,9 +101,9 @@ onShow(() => {
 
 const initUserData = () => {
 	// 1. 优先尝试从本地缓存获取登录信息
-	const storageUser = uni.getStorageSync('user')
-	const token = uni.getStorageSync('token')
-
+	const storageUser =userStore.userInfo
+	const token = userStore.token
+	console.log(storageUser)
 	if (token && storageUser) {
 		user.value = storageUser
 		isLogin.value = true
