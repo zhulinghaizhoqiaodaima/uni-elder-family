@@ -38,7 +38,7 @@
 			}
 		},
 		{
-			"path": "pages/elder/health/health",
+			"path": "pages/health/health",
 			"style": {
 				"navigationBarTitleText": "健康档案"
 			}
@@ -56,7 +56,7 @@
 			}
 		},
 		{
-			"path": "pages/elder/voice/voice",
+			"path": "pages/voice/voice",
 			"style": {
 				"navigationBarTitleText": "语音助手"
 			}
@@ -86,7 +86,7 @@
 				"selectedIconPath": "static/icons/home_active.png"
 			},
 			{
-				"pagePath": "pages/elder/voice/voice",
+				"pagePath": "pages/voice/voice",
 				"text": "语音助手",
 				"iconPath": "/static/icons/voice.png",
 				"selectedIconPath": "static/icons/voice_active.png"

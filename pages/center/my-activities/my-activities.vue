@@ -79,7 +79,7 @@ const loadData = async () => {
 
 const goList = () => {
   // 跳转到活动列表页，根据你实际路径修改
-  uni.switchTab({ url: '/pages/elder/activity/activity' })
+  uni.switchTab({ url: '/pages/activity/activity' })
 }
 
 onMounted(() => {

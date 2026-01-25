@@ -110,7 +110,7 @@
 				})
 				userStore.login(res)
 				setTimeout(() => {
-					// 注意：如果 '/pages/elder/index/index' 是底部 TabBar 页面，必须用 switchTab
+					// 注意：如果 '/pages/index/index' 是底部 TabBar 页面，必须用 switchTab
 					// 如果是普通页面，使用 navigateTo 或 redirectTo
 					uni.navigateTo({
 						url: '/pages/index/index',

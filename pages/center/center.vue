@@ -155,7 +155,7 @@
 	const goToHealthRecords = () => {
 		if (!checkLogin()) return
 		uni.navigateTo({
-			url: '/pages/elder/health/health'
+			url: '/pages/health/health'
 		})
 	}
 
