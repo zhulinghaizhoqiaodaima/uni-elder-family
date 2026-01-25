@@ -25,7 +25,7 @@
 	import DailyHealth from '@/components/DailyHealth.vue'
 	import {
 		fetchHealthRecords
-	} from '../../../api/mock'
+	} from '../../../api/order.js'
 
 	const records = ref([])
 	const dailyRecords = ref([])
