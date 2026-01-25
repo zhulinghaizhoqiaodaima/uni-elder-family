@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@qiun/ucharts": "^2.5.0-20230101",
+    "echarts": "^6.0.0",
+    "pinia": "^3.0.4"
+  },
+  "devDependencies": {
+    "sass": "^1.97.2",
+    "sass-loader": "^16.0.6"
+  }
+}

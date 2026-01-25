@@ -1,0 +1,138 @@
+{
+	"pages": [
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/test/test",
+			"style": {
+				"navigationBarTitleText": "测试页"
+			}
+		},
+		{
+			"path": "pages/elder/activity/activity",
+			"style": {
+				"navigationBarTitleText": "社区活动"
+			}
+		},
+		{
+			"path": "pages/center/center",
+			"style": {
+				"navigationBarTitleText": "个人中心"
+			}
+		},
+		{
+			"path": "pages/edit/edit",
+			"style": {
+				"navigationBarTitleText": "编辑信息"
+			}
+		},
+		{
+			"path": "pages/elder/health/health",
+			"style": {
+				"navigationBarTitleText": "健康档案"
+			}
+		},
+		{
+			"path": "pages/center/familyBinding/familyBinding",
+			"style": {
+				"navigationBarTitleText": "家属绑定"
+			}
+		},
+		{
+			"path": "pages/center/service-orders/service-orders",
+			"style": {
+				"navigationBarTitleText": "服务订单"
+			}
+		},
+		{
+			"path": "pages/elder/order-create/order-create",
+			"style": {
+				"navigationBarTitleText": "预约服务"
+			}
+		},
+		{
+			"path": "pages/elder/orders/orders",
+			"style": {
+				"navigationBarTitleText": "服务预约"
+			}
+		},
+		{
+			"path": "pages/elder/voice/voice",
+			"style": {
+				"navigationBarTitleText": "语音助手"
+			}
+		},
+		{
+			"path": "pages/family/index/index",
+			"style": {
+				"navigationBarTitleText": "家属端"
+			}
+		},
+		{
+			"path": "pages/family/alerts/alerts",
+			"style": {
+				"navigationBarTitleText": "健康监控"
+			}
+		},
+		{
+			"path": "pages/family/monitor/monitor",
+			"style": {
+				"navigationBarTitleText": "服务记录"
+			}
+		},
+		{
+			"path": "pages/family/records/records",
+			"style": {
+				"navigationBarTitleText": "异常报警"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "社区服务",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#4B8DF8",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/icons/home.png",
+				"selectedIconPath": "static/icons/home_active.png"
+			},
+			{
+				"pagePath": "pages/elder/voice/voice",
+				"text": "语音助手",
+				"iconPath": "/static/icons/voice.png",
+				"selectedIconPath": "static/icons/voice_active.png"
+			},
+			{
+				"pagePath": "pages/elder/activity/activity",
+				"text": "社区活动",
+				"iconPath": "static/icons/activity.png",
+				"selectedIconPath": "static/icons/activity_active.png"
+			},
+			{
+				"pagePath": "pages/center/center",
+				"text": "个人中心",
+				"iconPath": "static/icons/user.png",
+				"selectedIconPath": "static/icons/user_active.png"
+			}
+		]
+	}
+}
