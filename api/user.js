@@ -17,3 +17,11 @@ export function registerApi(data) {
     data: data
   })
 }
+
+export function updateUserApi(data) {
+  return request({
+    url: '/api/user/update',
+    method: 'POST',
+    data: data
+  })
+}
