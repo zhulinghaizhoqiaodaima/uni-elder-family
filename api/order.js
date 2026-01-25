@@ -14,6 +14,18 @@ export function createOrderApi(data) {
   })
 }
 
+/**
+ * 查询某人的订单列表
+ * URL: /order/list?userId=1
+ */
+export function fetchUserOrders(userId) {
+  return request({
+    url: '/order/list',
+    method: 'GET',
+    data: { userId } // uni.request 的 GET 请求参数放在 data 中会自动拼接到 URL
+  })
+}
+
 // --- 以下保持 Mock 数据不变，直到你有真实接口 ---
 
 // 获取推荐服务列表 (Mock)
