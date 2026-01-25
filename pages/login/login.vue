@@ -60,13 +60,14 @@
 	import {
 		loginApi
 	} from '@/api/user.js'
+	import { useUserStore } from '@/store/user.js'
 	// 状态变量
 	const phone = ref('')
 	const password = ref('')
 	const focusedInput = ref('') // 当前聚焦的输入框
 	const isLoading = ref(false) // 按钮加载状态
 	const hasLogo = ref(false) // 如果你有logo图片，改为true并在上面src填入路径
-
+	const userStore = useUserStore()
 	// 模拟登录功能
 	const login = async () => {
 		// 基础校验
@@ -97,17 +98,17 @@
 				phone: phone.value,
 				password: password.value
 			})
-
+			
 
 			// 模拟成功
 			// const success = true
-
+			console.log(res)
 			if (res) {
 				uni.showToast({
 					title: '欢迎回来',
 					icon: 'success'
 				})
-
+				userStore.login(res)
 				setTimeout(() => {
 					// 注意：如果 '/pages/elder/index/index' 是底部 TabBar 页面，必须用 switchTab
 					// 如果是普通页面，使用 navigateTo 或 redirectTo
@@ -128,8 +129,9 @@
 				})
 			}
 		} catch (error) {
+			console.log(error)
 			uni.showToast({
-				title: '网络异常，请重试',
+				title: `${error}`,
 				icon: 'none'
 			})
 		} finally {
