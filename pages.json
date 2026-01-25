@@ -20,7 +20,7 @@
 			}
 		},
 		{
-			"path": "pages/elder/activity/activity",
+			"path": "pages/activity/activity",
 			"style": {
 				"navigationBarTitleText": "社区活动"
 			}
@@ -92,7 +92,7 @@
 				"selectedIconPath": "static/icons/voice_active.png"
 			},
 			{
-				"pagePath": "pages/elder/activity/activity",
+				"pagePath": "pages/activity/activity",
 				"text": "社区活动",
 				"iconPath": "static/icons/activity.png",
 				"selectedIconPath": "static/icons/activity_active.png"
