@@ -29,9 +29,14 @@
 	} from 'vue'
 	import ActivityCard from '@/components/ActivityCard.vue' // 引入新组件
 	import {
-		fetchActivityList,signUpActivity
+		fetchActivityList,
+		signUpActivity
 	} from '@/api/activity.js'
+	import {
+		useUserStore
+	} from '@/store/user.js'
 
+	const userStore = useUserStore()
 	const activities = ref([])
 
 	onMounted(async () => {
@@ -54,7 +59,7 @@
 			confirmColor: '#ff7a45',
 			success: async (res) => {
 				if (res.confirm) {
-					const user = uni.getStorageSync('user')
+					const user = userStore.userInfo
 					await signUpActivity({
 						userId: user.id,
 						activityId: activity.id

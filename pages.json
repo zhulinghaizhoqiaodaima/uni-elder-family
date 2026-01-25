@@ -96,6 +96,12 @@
 			"style": {
 				"navigationBarTitleText": "异常报警"
 			}
+		},
+		{
+			"path": "pages/center/my-activities/my-activities",
+			"style": {
+				"navigationBarTitleText": ""
+			}
 		}
 	],
 	"globalStyle": {
