@@ -56,45 +56,9 @@
 			}
 		},
 		{
-			"path": "pages/elder/order-create/order-create",
-			"style": {
-				"navigationBarTitleText": "预约服务"
-			}
-		},
-		{
-			"path": "pages/elder/orders/orders",
-			"style": {
-				"navigationBarTitleText": "服务预约"
-			}
-		},
-		{
 			"path": "pages/elder/voice/voice",
 			"style": {
 				"navigationBarTitleText": "语音助手"
-			}
-		},
-		{
-			"path": "pages/family/index/index",
-			"style": {
-				"navigationBarTitleText": "家属端"
-			}
-		},
-		{
-			"path": "pages/family/alerts/alerts",
-			"style": {
-				"navigationBarTitleText": "健康监控"
-			}
-		},
-		{
-			"path": "pages/family/monitor/monitor",
-			"style": {
-				"navigationBarTitleText": "服务记录"
-			}
-		},
-		{
-			"path": "pages/family/records/records",
-			"style": {
-				"navigationBarTitleText": "异常报警"
 			}
 		},
 		{
