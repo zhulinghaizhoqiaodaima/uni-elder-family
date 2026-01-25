@@ -74,11 +74,12 @@
 		<view class="section-transparent">
 			<view class="section-header">
 				<text class="title">为您推荐</text>
+				<view @click="goServiceList" style="font-size:12px; color:#999; margin-left:auto;">
+					查看全部 >
+				</view>
 			</view>
-			<scroll-view class="scroll-row" scroll-x enable-flex>
-				<ServiceCard v-for="s in recommendations" :key="s.id" :service="s" class="scroll-item"
-					@order="handleQuickOrder(s.code, s.title)" />
-			</scroll-view>
+			<ServiceCard v-for="(s, index) in recommendations" :key="s.id" :service="s" :index="index"
+				class="scroll-item" @order="handleQuickOrder(s.code, s.title)" />
 		</view>
 
 		<!-- 确认下单弹窗 (可选) -->
@@ -178,6 +179,17 @@
 	const gotoHealth = () => {
 		uni.navigateTo({
 			url: '/pages/health/health'
+		})
+	}
+	const gotoDetail = (service) => {
+		console.log(service)
+		uni.navigateTo({
+			url: `/pages/serviceDetail/serviceDetail?id=${service.id}`
+		})
+	}
+	const goServiceList = () => {
+		uni.navigateTo({
+			url: '/pages/serviceList/serviceList'
 		})
 	}
 </script>

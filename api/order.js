@@ -30,30 +30,19 @@ export function fetchUserOrders(userId) {
 
 // 获取推荐服务列表 (Mock)
 export function fetchRecommendations() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve([
-        { 
-          id: 1, 
-          code: 'HOUSEKEEPING', 
-          title: '家政保洁', 
-          desc: '深度清洁', 
-          price: '35元/h',
-          icon: '/static/logo.png' 
-        },
-        { 
-          id: 2, 
-          code: 'ACCOMPANY', 
-          title: '陪诊就医', 
-          desc: '专业陪护', 
-          price: '120元/次',
-          icon: '/static/logo.png' 
-        }
-      ])
-    }, 500)
+  return request({
+    url: '/api/recommendations',
+    method: 'GET'
   })
 }
 
+export function fetchServiceDetail(id) {
+  return request({
+    url: '/api/service/detail',
+    method: 'GET',
+    data: { id }
+  })
+}
 // 获取健康档案数据 (Mock)
 export function fetchHealthRecords(userId) {
   return new Promise((resolve) => {

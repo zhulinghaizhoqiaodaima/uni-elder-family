@@ -1,91 +1,103 @@
 <template>
-  <view class="service-card">
-    <!-- 图标/图片区域 -->
-    <view class="icon-wrapper">
-      <!-- 如果图片加载失败，可以用 v-if 切换显示默认图标，这里假设图片路径正确 -->
-      <image 
-        :src="service.icon || '/static/logo.png'" 
-        mode="aspectFit" 
-        class="srv-icon" 
-      />
+  <view class="service-card" @click="$emit('detail', service)">
+    <view class="card-top">
+      <view class="icon-box">
+        <image 
+          :src="service.icon || '/static/logo.png'" 
+          mode="aspectFit" 
+          class="srv-icon" 
+        />
+      </view>
+      <view class="hot-tag" v-if="index === 0">HOT</view>
     </view>
 
-    <!-- 内容区域 -->
     <view class="content">
       <text class="title">{{ service.title }}</text>
-      <text class="desc">{{ service.desc }}</text>
-    </view>
+      <text class="desc">{{ service.description }}</text> </view>
 
-    <!-- 底部价格与按钮 -->
     <view class="footer">
       <text class="price">{{ service.price }}</text>
-      <view class="btn" @click.stop="$emit('order')">
+      <view class="btn" @click.stop="$emit('order', service)">
         <text>预约</text>
       </view>
     </view>
   </view>
 </template>
-
 <script setup>
 import { defineProps } from 'vue'
 
 const props = defineProps({
-  // 接收的数据结构: { id, title, desc, price, icon }
   service: {
     type: Object,
     default: () => ({})
+  },
+  index: {
+    type: Number,
+    default: 0
   }
 })
 </script>
 
 <style scoped lang="scss">
 .service-card {
-  /* 关键布局属性：适应横向滚动 */
-  width: 300rpx; 
-  display: inline-flex; /* 或 inline-block */
+  width: 280rpx; /* 稍微调窄一点，让屏幕能露出第三个卡片的一部分，提示可滑动 */
+  display: inline-flex;
   flex-direction: column;
   background: #ffffff;
-  border-radius: 20rpx;
+  border-radius: 24rpx;
   padding: 24rpx;
-  box-sizing: border-box; /* 确保padding不撑大宽度 */
-  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.05);
-  margin-right: 20rpx; /* 卡片之间的间距 */
-  white-space: normal; /* 强制内部文字换行，抵消父级scroll-view的nowrap */
+  box-sizing: border-box;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.04);
+  margin-right: 20rpx;
+  white-space: normal;
   vertical-align: top;
-  border: 1px solid rgba(0,0,0,0.02);
+  position: relative;
+  border: 1px solid #f0f0f0;
 }
 
-.icon-wrapper {
-  width: 100%;
-  height: 140rpx;
-  background: #f8faff;
-  border-radius: 16rpx;
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20rpx;
+}
+
+.icon-box {
+  width: 80rpx;
+  height: 80rpx;
+  background: #f0f7ff;
+  border-radius: 20rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20rpx;
-  overflow: hidden;
 }
 
 .srv-icon {
-  width: 80rpx;
-  height: 80rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.hot-tag {
+  font-size: 18rpx;
+  color: #ff4d4f;
+  background: #fff1f0;
+  padding: 4rpx 8rpx;
+  border-radius: 8rpx;
+  font-weight: bold;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20rpx;
-  min-height: 80rpx; /* 保持高度一致 */
+  min-height: 90rpx;
+  margin-bottom: 16rpx;
 }
 
 .title {
   font-size: 30rpx;
-  font-weight: bold;
+  font-weight: 600;
   color: #333;
   margin-bottom: 8rpx;
-  
-  /* 单行省略 */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -93,10 +105,8 @@ const props = defineProps({
 
 .desc {
   font-size: 22rpx;
-  color: #909399;
+  color: #999;
   line-height: 1.4;
-  
-  /* 两行省略 */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -107,27 +117,23 @@ const props = defineProps({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: auto; /* 推到底部 */
+  margin-top: auto;
 }
 
 .price {
   font-size: 28rpx;
   font-weight: bold;
-  color: #ff6b00; /* 橙色强调价格 */
+  color: #ff6b00;
 }
 
-.btn {
-  background: linear-gradient(135deg, #409eff, #2b85e4);
-  color: #fff;
-  font-size: 24rpx;
-  padding: 10rpx 24rpx;
-  border-radius: 30rpx;
-  font-weight: 500;
-  box-shadow: 0 4rpx 10rpx rgba(64, 158, 255, 0.3);
-  transition: opacity 0.2s;
-}
-
-.btn:active {
-  opacity: 0.8;
+.btn-arrow {
+  width: 44rpx;
+  height: 44rpx;
+  background: linear-gradient(135deg, #409eff, #3a7bd5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 8rpx rgba(64, 158, 255, 0.25);
 }
 </style>
