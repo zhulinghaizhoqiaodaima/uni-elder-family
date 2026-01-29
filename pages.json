@@ -6,7 +6,12 @@
 				"navigationBarTitleText": ""
 			}
 		},
-		
+		{
+			"path": "pages/register/register",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
 		{
 			"path": "pages/index/index",
 			"style": {

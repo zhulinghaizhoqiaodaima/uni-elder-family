@@ -1,7 +1,7 @@
 // 1. 定义基础域名
 // H5 环境下如果配置了代理，这里可以留空或者写 '/api'
 // App/小程序环境下必须写完整域名
-const BASE_URL = 'http://localhost:8080'
+const BASE_URL = 'http://192.168.100.40:8080'
 
 // 2. 定义请求函数
 const request = (options) => {
